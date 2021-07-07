@@ -10,18 +10,18 @@ class Paper{
 		}
 		this.image=loadImage("paper.png")
 		
-        this.body = Bodies.rectangle(200, 650, 20, options);
+        this.body=Bodies.circle(x,y,(r-20)/2,options)
         this.r=r
         
         World.add(world, this.body);
       }
       display(){
-        var angle = this.body.angle;
+       
         push();
         translate(this.body.position.x, this.body.position.y);
-        rotate(angle);
+        
         imageMode(CENTER);
-        image(this.image, 0, 0);
+        image(this.image, 0, 0, this.r);
         pop();
       }
 }
